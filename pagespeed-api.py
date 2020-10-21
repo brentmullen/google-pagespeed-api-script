@@ -50,7 +50,7 @@ with open('pagespeed.csv') as pagespeedurls:
             cls = str(final['lighthouseResult']['audits']['cumulative-layout-shift']['displayValue'])
             clsScore = final['lighthouseResult']['audits']['cumulative-layout-shift']['score']
 
-            v6score = round(((fcpScore * .15) + (siScore * .15) + (lcpScore * .25) + (ttiScore * .15) + (tbtScore * .25) + (clsScore * .05)) * 100)
+            v6score = round(final['lighthouseResult']['categories']['performance']['score'] * 100)
         except KeyError:
             print(f'<KeyError> One or more keys not found {analyzeUrl}.')
         
