@@ -55,7 +55,7 @@ with open('pagespeed.csv') as pagespeedurls:
             print(f'<KeyError> One or more keys not found {analyzeUrl}.')
         
         try:
-            file.write(f'{row[0]}, {url}, {str(v6score)}, {fcp}, {si}, {lcp}, {tti}, "{tbt}", {cls}\n'.replace(' ', ' '))
+            file.write(f'{row[0]}, {url}, {str(v6score)}, {fcp}, {si}, {lcp}, {tti},"{tbt}", {cls}\n'.replace(' ', ' '))
         except NameError:
             print(f'<NameError> Failing because of KeyError {analyzeUrl}.')
             file.write(f'<KeyError> & <NameError> Failing because of nonexistant Key ~ {analyzeUrl}.' + '\n')
